@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  is_hw: false
+  is_math: false
+  is_science: false
+  is_spanish: false
+  is_event: false
+  is_tutorial: false
+  is_class_project: false
+  date: 2018-08-14
+
+two:
+  title: MyString
+  content: MyText
+  is_hw: false
+  is_math: false
+  is_science: false
+  is_spanish: false
+  is_event: false
+  is_tutorial: false
+  is_class_project: false
+  date: 2018-08-14

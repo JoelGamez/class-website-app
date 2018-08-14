@@ -1,0 +1,67 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_hw %>
+    <%= form.check_box :is_hw %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_math %>
+    <%= form.check_box :is_math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_science %>
+    <%= form.check_box :is_science %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_spanish %>
+    <%= form.check_box :is_spanish %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_event %>
+    <%= form.check_box :is_event %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_tutorial %>
+    <%= form.check_box :is_tutorial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_class_project %>
+    <%= form.check_box :is_class_project %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
