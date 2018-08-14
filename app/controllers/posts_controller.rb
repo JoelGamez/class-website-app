@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -71,5 +71,9 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :content, :is_hw, :is_math, :is_science, :is_spanish, :is_event, :is_tutorial, :is_class_project, :date)
+    end
+
+    def authenticate_admin
+      redirect_to '/', alert: 'Not authorized.' unless current_admin     
     end
 end

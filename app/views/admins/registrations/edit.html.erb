@@ -31,6 +31,19 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <% if current_admin.avatar.attached? %>
+
+  <%= image_tag(current_admin.avatar, size:"250x200") %>
+  <% else %>
+
+    <p>no profile pic<p>
+  <% end %>
+
+  <div class='field'>
+  <%= f.label "Profile Picture"%>
+  <%= f.file_field :avatar%>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
