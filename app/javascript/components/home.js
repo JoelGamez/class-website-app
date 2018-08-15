@@ -11,7 +11,8 @@ class Home extends React.Component {
   render(){
     return (
       <div>
-        <p>Im HOME</p>
+          <p>Im HOME</p>
+          
       </div>
     )
   }

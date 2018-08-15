@@ -5,7 +5,8 @@ import PostContainer from './postContainer'
 import About from './about'
 import Tutorial from './tutorial'
 import Home from './home'
-import {Route, Switch} from 'react-router-dom'
+import Header from './header'
+import {Route, Switch, Link} from 'react-router-dom'
 
 
 
@@ -13,7 +14,8 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <a>NAVVVVVV</a>
+        <Header/>
+
         <Switch>
           < Route exact path="/" component={Home}/>
           < Route exact path="/posts" component={PostContainer}/>
