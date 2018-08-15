@@ -15,7 +15,7 @@ class Header extends React.Component {
           <Navbar className='pageNav' inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a id='logo'>HQ3</a>
+                <a id='logo'>HG3</a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>

@@ -16,17 +16,23 @@
 
 .pageNav {
   background-color: #ff6969;
-  border-color: #f8f8f8;
+  border-color: white;
 }
 
 #logo {
   color: white;
   font-family: 'Pacifico', cursive;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 28px;
+  margin-top: -4px;
 
 }
 
 .pageNav a  {
   color: white;
+  font-size: 15px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
 }
