@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     passwords:          "admins/passwords"
   }
 
-  resources :posts
+  resources :posts do
+    resources :images, only: [:destroy]
+  end
   root 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

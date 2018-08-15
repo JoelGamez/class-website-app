@@ -62,6 +62,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Blob.find_signed(params[:id])
+    @image.purge_later
+    redirect_to post_path(@post)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -70,10 +77,11 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :is_hw, :is_math, :is_science, :is_spanish, :is_event, :is_tutorial, :is_class_project, :date)
+      params.require(:post).permit(:admin_id, :title, :content, :is_hw, :is_math, :is_science, :is_spanish, :is_event, :is_tutorial, :is_class_project, :date, images:[])
     end
 
     def authenticate_admin
-      redirect_to '/', alert: 'Not authorized.' unless current_admin     
+
+      redirect_to '/', alert: 'Not authorized.' unless current_admin
     end
 end

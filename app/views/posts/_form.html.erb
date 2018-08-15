@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+   <%= form.hidden_field :admin_id, :value => current_admin.id.to_i  %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
@@ -59,6 +63,16 @@
   <div class="field">
     <%= form.label :date %>
     <%= form.date_select :date %>
+  </div>
+
+  <% if @post.images.attached? %>
+    <% @post.images.each do |image| %>
+    <%= image_tag(image, size:"250x200")%>
+    <%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end %>
+  <%end %>
+  <div class='field'>
+    <%= form.file_field :images, multiple: true%>
   </div>
 
   <div class="actions">
