@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  devise_scope :admin do
-    authenticated :admin do
-      root                to: "posts#index",
-                          as: :authenticated_user_root
-    end
-  end
 
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
+#/////////////////////Devise--------------------------------------------------------
   devise_for :admins,      path: "admins",
   controllers: {
     sessions:           "admins/sessions",
@@ -16,6 +15,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :images, only: [:destroy]
   end
+
+  #/////////////////////Rails Config------------------
   root 'posts#index'
   match '/about', to: 'posts#index', via: :all
   match '/tutorials', to: 'posts#index', via: :all
