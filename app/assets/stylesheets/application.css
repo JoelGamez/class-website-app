@@ -19,6 +19,12 @@
   border-color: white;
 }
 
+.postNav {
+  background-color: #ff6969;
+  border-color: white;
+  width: 50%;
+}
+
 #logo {
   color: white;
   font-family: 'Pacifico', cursive;
@@ -33,6 +39,10 @@
   font-size: 15px;
 }
 
-.navbar-inverse .navbar-toggle {
+.navbar-inverse .navbar-toggle .navbar-nav {
     border-color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
 }

@@ -8,6 +8,7 @@ import {Navbar, Nav, NavItem} from 'react-bootstrap/lib'
 
 
 
+
 class Header extends React.Component {
   render(){
     return (
@@ -15,34 +16,34 @@ class Header extends React.Component {
           <Navbar className='pageNav' inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a id='logo'>HG3</a>
+                <p id='logo'>HG3</p>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={1} href="#">
+                <NavItem eventKey={1} >
                   <NavLink exact activeStyle={{color:"#fbe547"}}to='/'>Home</NavLink>
                 </NavItem>
-                <NavItem eventKey={2} href="#">
+                <NavItem eventKey={2} >
                   <NavLink activeStyle={{color:"#fbe547"}}to='/about'>About</NavLink>
                 </NavItem>
-                <NavItem eventKey={3} href="#">
+                <NavItem eventKey={3} >
                   <NavLink activeStyle={{color:"#fbe547"}}to='/tutorials'>Tutorials</NavLink>
                 </NavItem>
-                <NavItem eventKey={4} href="#">
+                <NavItem eventKey={4} >
                   <NavLink activeStyle={{color:"#fbe547"}}to='/posts'>Posts</NavLink>
                 </NavItem>
-                <NavItem eventKey={5} >
-                  <a href='/admins/sign_in'>signin</a>
+                <NavItem eventKey={5} href={'/admins/sign_in'}>
+                  SignIn
                 </NavItem>
               </Nav>
               <Nav pullRight>
                 <NavItem eventKey={1} href="#">
-                    <a >Resources</a>
+                    Resources
                 </NavItem>
                 <NavItem eventKey={2} href="#">
-                    <a >Local Events</a>
+                    Local Events
                 </NavItem>
               </Nav>
             </Navbar.Collapse>
