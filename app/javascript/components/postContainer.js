@@ -38,6 +38,7 @@ export default class PostContainer extends React.Component {
    }
 
     componentDidMount() {
+
       this.getCertainPosts()
       this.getCertainPosts(`mathPosts`,"mathPosts")
       this.getCertainPosts(`sciencePosts`,"sciencePosts")
@@ -45,6 +46,8 @@ export default class PostContainer extends React.Component {
       this.getCertainPosts(`hwPosts`,"hwPosts")
       this.getCertainPosts(`eventPosts`,"eventPosts")
       this.getCertainPosts(`classProjectPosts`,"classProjectPosts")
+      this.setState({results: this.getCertainPosts()})
+      console.log(this.state.results)
 
 
     }
@@ -63,7 +66,7 @@ export default class PostContainer extends React.Component {
                title
                content
                id
-               is_math
+               date
              }
            }
          `
@@ -71,7 +74,7 @@ export default class PostContainer extends React.Component {
      }).then(response => {
 
 
-         this.setState({[x]: response.data.data[y]})
+         this.setState({[x]: response.data.data[y].reverse()})
      })
      return this.state[y]
      ////////////////////////////////
@@ -110,15 +113,11 @@ export default class PostContainer extends React.Component {
           <PostNav style={{width: '50px'}} updateResults={this.updateResults}
                                           resultData={this.state.results}
                                           getCertainPosts={this.getCertainPosts}
+          />
 
 
 
-                                          />
-          <button onClick={this.getMathPost}>wth</button>
-          <h1>Postger</h1>
-          <br/>
-            <Post data={this.state.posts}/>
-          <p>--------------------</p>
+
 
         </div>
 
