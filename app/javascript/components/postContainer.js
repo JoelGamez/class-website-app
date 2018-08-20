@@ -25,6 +25,9 @@ export default class PostContainer extends React.Component {
          mathPosts: [],
          sciencePosts: [],
          spanishPosts: [],
+         hwPosts: [],
+         eventPosts: [],
+         classProjectPosts: [],
          results: []
        },
       this.getCertainPosts = this.getCertainPosts.bind(this),
@@ -39,6 +42,10 @@ export default class PostContainer extends React.Component {
       this.getCertainPosts(`mathPosts`,"mathPosts")
       this.getCertainPosts(`sciencePosts`,"sciencePosts")
       this.getCertainPosts(`spanishPosts`,"spanishPosts")
+      this.getCertainPosts(`hwPosts`,"hwPosts")
+      this.getCertainPosts(`eventPosts`,"eventPosts")
+      this.getCertainPosts(`classProjectPosts`,"classProjectPosts")
+
 
     }
 /////////////////////////////////////////////////////////////////////////////////
