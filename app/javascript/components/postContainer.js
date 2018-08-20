@@ -46,13 +46,10 @@ export default class PostContainer extends React.Component {
       this.getCertainPosts(`hwPosts`,"hwPosts")
       this.getCertainPosts(`eventPosts`,"eventPosts")
       this.getCertainPosts(`classProjectPosts`,"classProjectPosts")
-      this.setState({results: this.getCertainPosts()})
-      console.log(this.state.results)
-
-
+      this.getCertainPosts(`posts`,"posts",`results`)
     }
 /////////////////////////////////////////////////////////////////////////////////
-    getCertainPosts = (x = `posts`, y = "posts") => {
+    getCertainPosts = (x = `posts`, y = "posts", z = x) => {
      axios({
        method: 'POST',
        url: '/graphql',
@@ -74,7 +71,7 @@ export default class PostContainer extends React.Component {
      }).then(response => {
 
 
-         this.setState({[x]: response.data.data[y].reverse()})
+         this.setState({[z]: response.data.data[y].reverse()})
      })
      return this.state[y]
      ////////////////////////////////

@@ -6,6 +6,7 @@ Types::PostType = GraphQL::ObjectType.define do
   field :content, types.String
   field :id, types.Int
   field :date, types.String
+  field :images, types.String
 
 
 end

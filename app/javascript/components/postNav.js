@@ -17,6 +17,9 @@ class PostNav extends React.Component {
 
 
 
+
+
+
  getContentpreview(x){
 
   return x.substring(0,40) + "..."
