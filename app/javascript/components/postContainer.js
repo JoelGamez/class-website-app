@@ -23,24 +23,26 @@ export default class PostContainer extends React.Component {
      this.state =  {
          posts: [],
          mathPosts: [],
+         sciencePosts: [],
+         spanishPosts: [],
          results: []
        },
-      this.getAllPosts = this.getAllPosts.bind(this),
-      this.getMathPost = this.getMathPost.bind(this),
+      this.getCertainPosts = this.getCertainPosts.bind(this),
       this.renderMathPost = this.renderMathPost.bind(this),
       this.updateResults = this.updateResults.bind(this)
 
 
    }
 
-
     componentDidMount() {
-      this.getAllPosts()
-      this.getMathPost()
+      this.getCertainPosts()
+      this.getCertainPosts(`mathPosts`,"mathPosts")
+      this.getCertainPosts(`sciencePosts`,"sciencePosts")
+      this.getCertainPosts(`spanishPosts`,"spanishPosts")
 
     }
-
-    getAllPosts = () => {
+/////////////////////////////////////////////////////////////////////////////////
+    getCertainPosts = (x = `posts`, y = "posts") => {
      axios({
        method: 'POST',
        url: '/graphql',
@@ -50,7 +52,7 @@ export default class PostContainer extends React.Component {
        data: {
          query: `
            query {
-             posts {
+             ${x} {
                title
                content
                id
@@ -62,57 +64,25 @@ export default class PostContainer extends React.Component {
      }).then(response => {
 
 
-         this.setState({posts: response.data.data.posts})
+         this.setState({[x]: response.data.data[y]})
      })
+     return this.state[y]
      ////////////////////////////////
-
-
-
    }
 
+/////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////
    updateResults(topic){
      this.setState({
-    results: topic
-  })
-
-
-
-
+       results: topic
+     })
    }
-
-
-   getMathPost(){
-
-       axios({
-         method: 'POST',
-         url: '/graphql',
-         headers: { 'Content-Type': 'application/json',
-                     'X-Requested-With': 'XMLHttpRequest',
-                     'X-CSRF-TOKEN':     token},
-         data: {
-           query: `
-             query {
-               mathPosts {
-                 title
-                 content
-                 id
-                 is_math
-               }
-             }
-           `
-         }
-       }).then(response => {
-
-
-           this.setState({mathPosts: response.data.data.mathPosts})
-       })
-     }
-
-
-
-
-
+   //////////////////////////////////////////////
    renderMathPost(){
 
      return(
@@ -130,7 +100,13 @@ export default class PostContainer extends React.Component {
     render () {
       return (
         <div>
-          <PostNav style={{width: '50px'}} updateResults={this.updateResults} getMath={this.getMathPost} resultData={this.state.results}/>
+          <PostNav style={{width: '50px'}} updateResults={this.updateResults}
+                                          resultData={this.state.results}
+                                          getCertainPosts={this.getCertainPosts}
+
+
+
+                                          />
           <button onClick={this.getMathPost}>wth</button>
           <h1>Postger</h1>
           <br/>

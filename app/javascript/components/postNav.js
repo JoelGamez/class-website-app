@@ -24,8 +24,11 @@ class PostNav extends React.Component {
             <Navbar.Collapse>
               <Nav>
                 <NavItem eventKey={1} >
-                  <NavLink onClick={ () => props.updateResults(props.getMath()) } activeStyle={{color:"#fbe547"}}to='/posts/math'>MathPosts</NavLink>
-                  <button onClick={ () => props.updateResults(props.getMath()) } activeStyle={{color:"#fbe547"}}>MathREnder</button>
+
+                  <button onClick={ () => props.updateResults(props.getCertainPosts()) } activeStyle={{color:"#fbe547"}}>All Posts!</button>
+                  <button onClick={ () => props.updateResults(props.getCertainPosts(`mathPosts`,"mathPosts")) } activeStyle={{color:"#fbe547"}}>MathREnder</button>
+                  <button onClick={ () => props.updateResults(props.getCertainPosts(`sciencePosts`,"sciencePosts")) } activeStyle={{color:"#fbe547"}}>Science Posts!</button>
+                  <button onClick={ () => props.updateResults(props.getCertainPosts(`spanishPosts`,"spanishPosts")) } activeStyle={{color:"#fbe547"}}>Spanish Posts!</button>
                 </NavItem>
               </Nav>
             </Navbar.Collapse>
