@@ -18,6 +18,7 @@ class App extends React.Component {
 
         <Switch>
           < Route exact path="/" component={Home}/>
+          < Route exact path="/posts/:id" component={Home}/>
           < Route exact path="/posts" component={PostContainer}/>
           < Route exact path="/about" component={About}/>
           < Route exact path="/tutorials" component={Tutorial}/>

@@ -9,4 +9,5 @@ Types::PostType = GraphQL::ObjectType.define do
   field :images, types.String
 
 
+
 end

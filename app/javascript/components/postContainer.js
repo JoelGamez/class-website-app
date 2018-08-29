@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import {Link, NavLink} from 'react-router-dom'
 import axios from 'axios';
-import Post from './post'
+
 import PostNav from './postNav'
 
 const headers = {

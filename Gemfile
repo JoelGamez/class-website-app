@@ -8,6 +8,7 @@ gem "aws-sdk-s3", require: false
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 
+gem 'materialize-sass'
 gem 'jquery-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

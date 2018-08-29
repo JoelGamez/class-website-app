@@ -45,7 +45,7 @@ class PostNav extends React.Component {
             <Navbar.Collapse>
               <Nav>
                 <NavItem eventKey={1} >
-                  <button className="postNavButton" onClick={ () => props.updateResults(props.getCertainPosts()) } activeStyle={{color:"#fbe547"}}>All Posts!</button>
+                  <button className="postNavButton" onClick={ () => props.updateResults(props.getCertainPosts()) } >All Posts!</button>
                 </NavItem>
                 <NavItem eventKey={2} >
                   <button className="postNavButton" onClick={ () => props.updateResults(props.getCertainPosts(`mathPosts`,"mathPosts")) } >Math Posts</button>

@@ -23,26 +23,26 @@ class Header extends React.Component {
             <Navbar.Collapse>
               <Nav>
                 <NavItem eventKey={1} >
-                  <NavLink exact activeStyle={{color:"#fbe547"}}to='/'>Home</NavLink>
+                    <Link to="/">Home</Link>
                 </NavItem>
                 <NavItem eventKey={2} >
-                  <NavLink activeStyle={{color:"#fbe547"}}to='/about'>About</NavLink>
+                    <Link to="/about">About</Link>
                 </NavItem>
                 <NavItem eventKey={3} >
-                  <NavLink activeStyle={{color:"#fbe547"}}to='/tutorials'>Tutorials</NavLink>
+                  Tutorials
                 </NavItem>
                 <NavItem eventKey={4} >
-                  <NavLink activeStyle={{color:"#fbe547"}}to='/posts'>Posts</NavLink>
+                  <Link to="/posts">Posts</Link>
                 </NavItem>
                 <NavItem eventKey={5} href={'/admins/sign_in'}>
                   SignIn
                 </NavItem>
               </Nav>
               <Nav pullRight>
-                <NavItem eventKey={1} href="#">
+                <NavItem eventKey={1} to="/posts">
                     Resources
                 </NavItem>
-                <NavItem eventKey={2} href="#">
+                <NavItem eventKey={2} href="/#posts">
                     Local Events
                 </NavItem>
               </Nav>

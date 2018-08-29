@@ -14,10 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require materialize
 
 $(document).on('turbolinks:load', function() {
 
-
+    $('.sidenav').sidenav();
 
 
 })
