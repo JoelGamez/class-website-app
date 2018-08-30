@@ -1,65 +1,41 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+
+<h3>
+
   <%= @post.title %>
-</p>
+</h3>
+<% if @post.images.attached? %>
+  <% @post.images.each do |image| %>
+    <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
+    <%if current_admin%>
+      <%= link_to 'Delete Image', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+  <%end %>
+<%end %>
 
-<p>
-  <strong>Content:</strong>
+<h5>
+  <strong>Descripton:</strong><br>
   <%= @post.content %>
-</p>
+</h5>
 
-<p>
-  <strong>Is hw:</strong>
-  <%= @post.is_hw %>
-</p>
-
-<p>
-  <strong>Is math:</strong>
-  <%= @post.is_math %>
-</p>
-
-<p>
-  <strong>Is science:</strong>
-  <%= @post.is_science %>
-</p>
-
-<p>
-  <strong>Is spanish:</strong>
-  <%= @post.is_spanish %>
-</p>
-
-<p>
-  <strong>Is event:</strong>
-  <%= @post.is_event %>
-</p>
-
-<p>
-  <strong>Is tutorial:</strong>
-  <%= @post.is_tutorial %>
-</p>
-
-<p>
-  <strong>Is class project:</strong>
-  <%= @post.is_class_project %>
-</p>
 
 <p>
   <strong>Date:</strong>
   <%= @post.date %>
 </p>
+<p>
+  <strong>Catergories:</strong>
+  <%= @post.string_topic_lists(@post.topic_lists) %>
 
+</p>
 <div>
-<% if @post.images.attached? %>
-  <% @post.images.each do |image| %>
-  <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed")%>
-  <br><%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%end %>
-<%end %>
 <br>
 <br>
 <br>
 </div>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+  <%= link_to 'Back', posts_path %>
+<%if current_admin%>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+
+<%end%>
