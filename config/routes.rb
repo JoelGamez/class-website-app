@@ -17,12 +17,17 @@ Rails.application.routes.draw do
   end
 
   #/////////////////////Rails Config------------------
-  root 'posts#index'
-  match '/about', to: 'posts#index', via: :all
-  match '/tutorials', to: 'posts#index', via: :all
-  match '/home', to: 'posts#index', via: :all
-  match '/posts', to: 'posts#index', via: :all
-  match '/posts/:id', to: 'posts#index', via: :all
+  root 'posts#home'
+
+  get '/home' => 'posts#home'
+
+
+  # React Work-------------------------------------------
+  # match '/about', to: 'posts#index', via: :all
+  # match '/tutorials', to: 'posts#index', via: :all
+  # match '/home', to: 'posts#index', via: :all
+  # match '/posts', to: 'posts#index', via: :all
+  # match '/posts/:id', to: 'posts#index', via: :all
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -19,6 +19,33 @@
 $(document).on('turbolinks:load', function() {
 
     $('.sidenav').sidenav();
+    $('.fixed-action-btn').floatingActionButton();
+    $('.scrollspy').scrollSpy();
+    $('.materialboxed').materialbox();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })

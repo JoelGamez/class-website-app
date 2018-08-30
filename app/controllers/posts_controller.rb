@@ -19,6 +19,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def home
+    @post = Post.all
+  end
   # GET /posts/1/edit
   def edit
   end

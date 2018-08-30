@@ -45,11 +45,26 @@
       </ul>
     </header>
 
-      <%= link_to "Posts", posts_path%>
+
       <%= link_to "SignIn", '/admins/sign_in'%>
 
       <%if current_admin%>
-      <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
+        <div id="adminTab">
+          <p>Hello <%= current_admin.email %> |
+          <%= link_to "Sign Out", destroy_admin_session_path, method: :delete %>
+          </p>
+          <div class="fixed-action-btn">
+            <a class="btn-floating btn-large yellow">
+              <i class="large material-icons">account_circle</i>
+            </a>
+            <ul>
+              <%= link_to destroy_admin_session_path, method: :delete, class: "btn-floating purple darken-1 pulse" do %>
+              <i class=" medium material-icons">call_made</i>
+              <% end %>  <p>Signout</p>
+              <li><a href="/posts/new" class="btn-floating clue pulse"><i class=" medium material-icons">mode_edit</i></a>Make a post</li>
+            </ul>
+          </div>
+        </div>
       <%end%>
 
       <div class="container">  <!-- newly added code -->

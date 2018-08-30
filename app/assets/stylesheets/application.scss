@@ -16,6 +16,9 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+body{
+  background-color: #00e8d0;
+}
 ///////////////////////////////Materialize
 #siteNav {
   background-color: #ff6969;
@@ -23,6 +26,18 @@
 
 }
 
+.sidenav {
+  background-color: #ee6567;
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  margin-top: 22px;
+  font-weight: bold;
+}
+
+.sidenav li>a {
+  color: white;
+  font-size: 20px;
+}
 
 .navLinks{
   color: white;
@@ -41,22 +56,44 @@ nav .brand-logo {
     padding-left: 22px;
 }
 
-nav ul a:hover {
+ a:hover   {
     background-color: rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
 
-nav a:visited {
+  a:visited {
     color: #fff;
 }
-/////////////////////////////////////////////////////////
+
+#adminTab{
+  background-color: yellow;
+  width: 38%;
+  height: 15px;
+  border-radius: 5px;
+}
+
+///////////////HOME PAGE//////////////////////////////////////////
+
+#homePosts{
+  background-color: #fff;
+  border: 0px solid #fffa9b;
+  border-radius: 5px;
+  box-shadow: 4px 2px 4px 0px #666666;
+}
+
+.postlink{
+  color: black;
+}
+.postlink>a:visited{
+  color: black;
+}
 .pageNav {
   background-color: #ff6969;
   border-color: white;
   border-radius: 5px;
 }
 
-.postNav {
+.postNav  {
   background-color: #ff6969;
   border-color: white;
   border-radius: 5px;
@@ -106,3 +143,7 @@ a:hover {
 .resultHeader {
     font-family: 'Pacifico', cursive;
 }
+
+
+
+///////////////////////////////////////

@@ -50,5 +50,16 @@
   <%= @post.date %>
 </p>
 
+<div>
+<% if @post.images.attached? %>
+  <% @post.images.each do |image| %>
+  <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed")%>
+  <br><%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%end %>
+<%end %>
+<br>
+<br>
+<br>
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
