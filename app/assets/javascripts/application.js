@@ -13,39 +13,23 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require_tree
+
+
+
 //= require materialize
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
 
 $(document).on('turbolinks:load', function() {
 
+    $('.carousel').carousel();
     $('.sidenav').sidenav();
     $('.fixed-action-btn').floatingActionButton();
     $('.scrollspy').scrollSpy();
     $('.materialboxed').materialbox();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      $('.tap-target').tapTarget();
+      $('.dropdown-trigger').dropdown();
 })
