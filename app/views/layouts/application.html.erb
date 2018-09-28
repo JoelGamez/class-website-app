@@ -7,13 +7,18 @@
 
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <script  src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
   </head>
 
@@ -61,17 +66,15 @@
             <ul>
               <%= link_to destroy_admin_session_path, method: :delete, class: "btn-floating purple darken-1 pulse" do %>
               <i class=" medium material-icons">call_made</i>
-              <% end %>  <p>Signout</p>
-              <li><a href="/posts/new" class="btn-floating clue pulse"><i class=" medium material-icons">mode_edit</i></a>Make a post</li>
+              <% end %>  <p class="adminButton">Signout</p>
+              <li><a href="/posts/new" class="btn-floating clue pulse"><i class=" medium material-icons">mode_edit</i></a><p class="adminButton">Make a post</p></li>
             </ul>
           </div>
         </div>
       <%end%>
 
-      <div class="container">  <!-- newly added code -->
-   <!-- end of new code -->
+
       <%= yield %>
-      </div>                   <!-- newly added code -->
 
 
 

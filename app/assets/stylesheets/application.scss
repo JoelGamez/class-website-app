@@ -13,9 +13,33 @@
  *= require_tree .
  *= require_self
  */
-@import "materialize";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+ .carousel.carousel-slider {
+     top: 0;
+     left: 0;
+     background-color: #000000e0;
+     border-radius: 10px;
+     /* margin-top: auto; */
+ }
+
+ img.responsive-img, video.responsive-video {
+     width: 100%;
+     /* align-self: center; */
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: auto;
+     /* background-color: black; */
+ }
+
+
+#showIMG {
+     height: 400px !important;
+ }
+
+.responsive-img materialboxed postImage{
+  vertical-align: middle;
+}
+///////////////////////////////^^^^^show images
 body{
   background-color: #00e8d0;
 }
@@ -72,6 +96,13 @@ nav .brand-logo {
   border-radius: 5px;
 }
 
+.adminButton{
+  color: white;
+}
+
+.carousel{
+
+}
 ///////////////HOME PAGE//////////////////////////////////////////
 
 #homePosts{
@@ -84,7 +115,7 @@ nav .brand-logo {
 .postlink{
   color: black;
 }
-.postlink>a:visited{
+.postlink:visited{
   color: black;
 }
 
@@ -92,11 +123,19 @@ nav .brand-logo {
 .video-container{
   border-radius: 5px;
 }
+
 ///////////////////////ShowPage----------------
 .postImage{
   border-radius: 5px;
 }
 
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    margin-bottom: 50px;
+}
 ////////////////////////////////
 .pageNav {
   background-color: #ff6969;

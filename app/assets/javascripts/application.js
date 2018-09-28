@@ -10,26 +10,42 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery3
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+
 //= require_tree
 
 
 
-//= require materialize
-
 $(document).ready(function(){
-  $('.carousel').carousel();
+
+  $('.carousel.carousel-slider').carousel({
+     fullWidth: true,
+     indicators: true
+   });
 });
 
-$(document).on('turbolinks:load', function() {
 
-    $('.carousel').carousel();
-    $('.sidenav').sidenav();
+
+
+$(document).ready(function() {
+
+
+  $('.sidenav').sidenav();
     $('.fixed-action-btn').floatingActionButton();
     $('.scrollspy').scrollSpy();
     $('.materialboxed').materialbox();
       $('.tap-target').tapTarget();
       $('.dropdown-trigger').dropdown();
+      // $('.carousel').carousel();
+      $('.carousel.carousel-slider').carousel({
+   fullWidth: true
+ });
+
+
+
+
+
 })

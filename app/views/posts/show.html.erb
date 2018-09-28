@@ -1,41 +1,60 @@
+<div class="container">
+  <h3>
+    <%= @post.title %>
+  </h3>
+
+  <% if @post.images.attached? %>
+    <% if @post.images.count > 1 %>
+      <div id="showIMG" class="carousel carousel-slider center" style="height: 400px;">
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2">Images</a>
+        </div>
+          <%@post.images.each do |image| %>
+            <div class="carousel-item center">
+
+                <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
+                <%if current_admin%>
+                <%= link_to 'Delete Image', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%end%>
+            </div>
+          <%end%>
+      </div>
+    <% else %>
+      <%@post.images.each do |image| %>
+          <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
+          <%if current_admin%>
+            <%= link_to 'Delete Image', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end%>
+      <%end %>
+    <%end %>
+  <%end%>
 
 
-<h3>
-
-  <%= @post.title %>
-</h3>
-<% if @post.images.attached? %>
-  <% @post.images.each do |image| %>
-    <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
-    <%if current_admin%>
-      <%= link_to 'Delete Image', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%end%>
-  <%end %>
-<%end %>
-
-<h5>
-  <strong>Descripton:</strong><br>
-  <%= @post.content %>
-</h5>
+  <h5>
+    <strong>Descripton:</strong><br>
+    <%= @post.content %>
+  </h5>
 
 
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
-<p>
-  <strong>Catergories:</strong>
-  <%= @post.string_topic_lists(@post.topic_lists) %>
+  <p>
+    <strong>Date:</strong>
+    <%= @post.date %>
+  </p>
+  <p>
+    <strong>Catergories:</strong>
+    <%= @post.string_topic_lists(@post.topic_lists) %>
 
-</p>
-<div>
-<br>
-<br>
-<br>
+  </p>
+  <div>
+  <br>
+  <br>
+  <br>
+  </div>
+
+    <%= link_to 'Back', posts_path %>
+  <%if current_admin%>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+
+  <%end%>
+
 </div>
-
-  <%= link_to 'Back', posts_path %>
-<%if current_admin%>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-
-<%end%>

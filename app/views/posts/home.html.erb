@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <div class="row">
       <div class="col s12">
 
@@ -22,15 +15,17 @@
 
               <tbody>
                 <% Post.recent_post(4).each do |post| %>
-                <tr>
-                  <%= link_to post do %>
-                    <td><%=post.title%></td>
+                  <%= link_to(post) do %>
+                  <tr>
+                    <td><%=link_to post.title, post, class: "postlink"%></td>
                     <td><%=post.content[0,10]%>...</td>
                     <td><%= post.string_topic_lists(post.topic_lists) %></td>
-                    <td><%=post.date%> <%=link_to '<i class=" medium material-icons">mode_edit</i>', post, class: "postlink"%></td>
+                    <td><%=post.date%>
 
+                  </td>
+
+                  </tr>
                   <%end%>
-                </tr>
 
 
                 <%end%>
