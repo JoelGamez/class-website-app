@@ -31,6 +31,13 @@
      /* background-color: black; */
  }
 
+ .PostContainer{
+   background-color: #fff;
+   border: 0px solid #fffa9b;
+   border-radius: 5px;
+   box-shadow: 4px 2px 4px 0px #666666;
+ }
+
 
 #showIMG {
      height: 400px !important;
@@ -87,6 +94,10 @@ nav .brand-logo {
 
   a:visited {
     color: #fff;
+}
+
+.postResults:visited {
+  color: black !important;
 }
 
 #adminTab{
@@ -152,11 +163,12 @@ nav .brand-logo {
 }
 
 .postNavButton {
-  margin: -10px;
-  background-color: white;
-  color: black;
-  border: white;
-  border-radius: 5PX;
+
+    background-color: white;
+    color: black;
+    border: white;
+    border-radius: 5PX;
+    margin: 4px;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -174,7 +186,7 @@ nav .brand-logo {
 }
 
 .pageNav a  {
-  color: white;
+  color: black;
   font-size: 15px;
 }
 

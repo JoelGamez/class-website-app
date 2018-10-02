@@ -14,15 +14,12 @@
 //= require jquery3
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+
 //= require_tree
 
 
 
-
-$(document).on('turbolinks:load', function() {
-
-
+$(document).ready(function(){
 
   $('.carousel.carousel-slider').carousel({
      fullWidth: true,
@@ -33,7 +30,7 @@ $(document).on('turbolinks:load', function() {
 
 
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
 
 
   $('.sidenav').sidenav();
