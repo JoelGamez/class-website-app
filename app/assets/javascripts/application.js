@@ -29,7 +29,17 @@ $(document).ready(function() {
   $('.dropdown-trigger').dropdown();
   // $('.carousel').carousel();
   $('.carousel.carousel-slider').carousel({
-     fullWidth: true,
-     indicators: true
+   fullWidth: true,
+   indicators: true
+  });
+
+
+  $(".log").hide("slow");
+  $("#icon_prefix").click(function() {
+   if ($("#icon_prefix").val() == "neverstoplearning"){
+     $(".admin").hide();
+     $( ".log" ).show( 2000 );
+   }
    });
+
  });
