@@ -25,55 +25,73 @@
   <%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
   <%end %>
   <%end %>
+
+
+
   <div class='field'>
     <%= form.file_field :images, multiple: true%>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, {:style => "background-color:#ffffff;"} %>
   </div>
 
   <div class="field">
-    <%= form.check_box :is_hw %>
-    <%= form.label :is_hw %>
+    <label>
+    <%= form.check_box :is_hw, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>HW</span>
+    </label>
   </div>
 
   <div class="field">
-    <%= form.check_box :is_math %>
-    <%= form.label :is_math %>
+    <label>
+    <%= form.check_box :is_math, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Math</span>
+    </label>
   </div>
 
   <div class="field">
-    <%= form.check_box :is_science %>
-    <%= form.label :is_science %>
+    <label>
+    <%= form.check_box :is_science, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Science</span>
+    </label>
   </div>
 
   <div class="field">
-    <%= form.check_box :is_spanish %>
-    <%= form.label :is_spanish %>
+    <label>
+    <%= form.check_box :is_spanish, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Spanish</span>
+    </label>
   </div>
 
   <div class="field">
-    <%= form.check_box :is_event %>
-    <%= form.label :is_event %>
+    <label>
+    <%= form.check_box :is_event, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Event</span>
+    </label>
   </div>
 
   <div class="field" >
-    <%= form.check_box :is_tutorial, type:"checkbox", checked:"checked" %>
-    <%= form.label :is_tutorial %>
+    <label>
+    <%= form.check_box :is_tutorial, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Tutorial</span>
+    </label>
   </div>
 
   <div class="field">
     <%= form.check_box :is_class_project %>
-    <%= form.label :is_class_project %>
+    <label>
+    <%= form.check_box :is_class_project, {:type => "checkbox", :class =>"filled-in" } %>
+    <span>Class Project</span>
+    </label>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
+    <label>Date: </label>
+    <%= form. date_field :date, {:type => "text", :class => "datepicker",:style => "background-color:#ffffff; width: 15%; border-radius:5px;"} %>
 
+  </div>
 
   <div class="actions">
     <%= form.submit %>
