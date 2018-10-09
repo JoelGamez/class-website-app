@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get '/home' => 'posts#home'
 
+  get '/about' => 'admins#about'
+
 
   # React Work-------------------------------------------
   # match '/about', to: 'posts#index', via: :all

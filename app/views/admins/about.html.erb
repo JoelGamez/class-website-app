@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <h2>About</h2>
+  <%= @admin.about %>
+
+  <% if current_admin %>
+
+      <br>
+      <a class="edit_about btn" style="margin-top:50px;">Edit About?</a>
+
+      <div id="about_edit"style="margin-top:30px;" >
+        <hr>
+
+      <%= form_for(current_admin,  url: registration_path(current_admin), html: { method: :put }) do |form| %>
+        <div class="field">
+          <%= form.label :about%>
+          <%= form.text_area :about, autocomplete: "off", style: "background-color:#ffffff;" %>
+        </div>
+        <div class="field">
+          <label>Confirm change with your password</label>
+          <%= form.password_field :current_password, autocomplete: "off",  style: "width:20%;" %>
+        </div>
+        <div class="actions">
+          <%= form.submit "Update" %>
+        </div>
+      <% end %>
+     </div>
+  <% end %>
+</div>
