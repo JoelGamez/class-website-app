@@ -42,7 +42,7 @@ $(document).ready(function() {
    }
    });
 
-   $("#about_edit").hide("slow");
+   $("#about_edit").hide();
    $(".edit_about").click(function() {
 
       $( "#about_edit" ).show( 2000 );

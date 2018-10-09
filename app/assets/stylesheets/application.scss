@@ -114,9 +114,16 @@ nav .brand-logo {
   color: white;
 }
 
-.carousel{
-
+.fixed-action-btn {
+    position: fixed;
+    right: 29px;
+    bottom: 23px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 997;
 }
+
+
 ///////////////HOME PAGE//////////////////////////////////////////
 
 #homePosts{
@@ -124,6 +131,7 @@ nav .brand-logo {
   border: 0px solid #fffa9b;
   border-radius: 5px;
   box-shadow: 4px 2px 4px 0px #666666;
+  padding-left: 10px;
 }
 
 .postlink{

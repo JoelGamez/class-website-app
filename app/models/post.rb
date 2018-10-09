@@ -23,10 +23,6 @@ class Post < ApplicationRecord
    topics.push("Class-Project") if self.is_class_project
    topics.push("Event") if self.is_event
 
-
-
-
-
   return topics
 
 
@@ -41,10 +37,18 @@ class Post < ApplicationRecord
       else
          topics += "#{i} | "
       end
-
     end
-
     return topics
+  end
+
+  def self.resources
+    resource = Post.where(is_resource:true)
+    return resource
+  end
+
+  def self.tutorials
+    tutorials = Post.where(is_tutorial:true)
+    return tutorials
   end
 
 end

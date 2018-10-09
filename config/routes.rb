@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :images, only: [:destroy]
   end
+  
 
   #/////////////////////Rails Config------------------
   root 'posts#home'
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   get '/home' => 'posts#home'
 
   get '/about' => 'admins#about'
+
+  get '/resources' => 'admins#resources'
 
 
   # React Work-------------------------------------------

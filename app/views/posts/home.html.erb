@@ -20,9 +20,7 @@
                     <td><%=link_to post.title, post, class: "postlink"%></td>
                     <td><%=post.content[0,10]%>...</td>
                     <td><%= post.string_topic_lists(post.topic_lists) %></td>
-                    <td><%=post.date%>
-
-                  </td>
+                    <td><%=post.date%></td>
 
                   </tr>
                   <%end%>

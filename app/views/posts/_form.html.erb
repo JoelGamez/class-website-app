@@ -20,10 +20,10 @@
     <%= form.text_field :title %>
   </div>
   <% if @post.images.attached? %>
-  <% @post.images.each do |image| %>
-  <%= image_tag(image, size:"250x200")%>
-  <%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%end %>
+    <% @post.images.each do |image| %>
+    <%= image_tag(image, size:"250x200")%>
+    <%= link_to 'Delete', post_image_path(@post, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end %>
   <%end %>
 
 
@@ -72,12 +72,6 @@
     </label>
   </div>
 
-  <div class="field" >
-    <label>
-    <%= form.check_box :is_tutorial, {:type => "checkbox", :class =>"filled-in" } %>
-    <span>Tutorial</span>
-    </label>
-  </div>
 
   <div class="field">
     <%= form.check_box :is_class_project %>
@@ -87,9 +81,23 @@
     </label>
   </div>
 
+  <div class="field" >
+    <label>
+      <%= form.check_box :is_tutorial, {:type => "checkbox", :class =>"filled-in" } %>
+      <span>Tutorial</span>
+    </label>
+  </div>
+
+  <div class="field" >
+    <label>
+      <%= form.check_box :is_resource, {:type => "checkbox", :class =>"filled-in" } %>
+      <span>Resource</span>
+    </label>
+  </div>
+
   <div class="field">
     <label>Date: </label>
-    <%= form. date_field :date, {:type => "text", :class => "datepicker",:style => "background-color:#ffffff; width: 15%; border-radius:5px;"} %>
+    <%= form. date_field :date, {:type => "text", :class => "datepicker",:style => "background-color:#ffffff; width: 15%; height: 20px; border-radius:5px;"} %>
 
   </div>
 
