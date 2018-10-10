@@ -48,5 +48,5 @@ $(document).ready(function() {
       $( "#about_edit" ).show( 2000 );
     });
 
-
+   
  });

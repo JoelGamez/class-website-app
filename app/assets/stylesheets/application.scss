@@ -222,6 +222,20 @@ label  {
     color: #fafafa !important;
 }
 
+.gallery_link {
+    background-color: yellow;
+    color: #ee6567 !important;
+    border-radius: 5px;
+    padding: 2px;
+    /* margin-bottom: 10px; */
+}
+
+.gallery_image{
+  margin: 10px;
+}
+.gallery_div {
+    margin: 5px;
+}
 ///////////////////////////////////////Devise
 
 #error_explanation h2 {

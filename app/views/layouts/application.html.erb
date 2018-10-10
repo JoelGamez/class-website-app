@@ -37,6 +37,10 @@
             <li><a class="navLinks" href="/about">About</a></li>
             <li><a class="navLinks" href="/posts">Posts</a></li>
             <li><a class="navLinks" href="/resources">Resources</a></li>
+            <%if current_admin %>
+              <li><a class="navLinks" href="/galleries">Galleries</a></li>
+            <%end%>
+
 
           </ul>
         </div>
@@ -47,6 +51,9 @@
         <li><a href="/about">About</a></li>
         <li><a href="/posts">Posts</a></li>
         <li><a href="/resources">Resources</a></li>
+        <%if current_admin %>
+          <li><a class="navLinks" href="/galleries">Galleries</a></li>
+        <%end%>
       </ul>
     </header>
 
@@ -67,6 +74,7 @@
               <i class=" medium material-icons">call_made</i>
               <% end %>  <p class="adminButton">Signout</p>
               <li><a href="/posts/new" class="btn-floating clue pulse"><i class=" medium material-icons">mode_edit</i></a><p class="adminButton">Make a post</p></li>
+              <li><a href="/galleries/new" class="btn-floating clue pulse pink"><i class=" medium material-icons">add_a_photo</i></a><p class="adminButton">New Gallery</p></li>
             </ul>
           </div>
         </div>

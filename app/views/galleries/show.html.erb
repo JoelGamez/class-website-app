@@ -1,0 +1,49 @@
+<div class="container">
+
+  <h3>
+    <%= @gallery.title %>
+  </h3>
+
+  <% if @gallery.images.attached? %>
+    <% if @gallery.images.count > 1 %>
+      <div id="showIMG" class="carousel carousel-slider center" style="height: 400px;">
+        <div class="carousel-fixed-item center">
+
+        </div>
+          <%@gallery.images.each do |image| %>
+            <div class="carousel-item center">
+
+                <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
+
+            </div>
+          <%end%>
+      </div>
+    <% else %>
+      <%@gallery.images.each do |image| %>
+          <%= image_tag(image, size:"250x200",class: "responsive-img materialboxed postImage")%>
+
+      <%end %>
+    <%end %>
+  <%end%>
+
+
+  <h5>
+    <strong>Descripton:</strong><br>
+    <%= @gallery.description %>
+  </h5>
+
+
+
+  <div>
+  <br>
+  <br>
+  <br>
+  </div>
+
+    <%= link_to 'Back', galleries_path %>
+  <%if current_admin%>
+    | <%= link_to 'Edit', edit_gallery_path(@gallery) %>
+
+  <%end%>
+
+</div>

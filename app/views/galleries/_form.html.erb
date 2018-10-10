@@ -1,0 +1,52 @@
+<%= form_with(model: gallery, local: true) do |form| %>
+  <% if gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+      <ul>
+      <% gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   <%= form.hidden_field :admin_id, :value => current_admin.id.to_i  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+
+  <% if @gallery.images.attached? %>
+    <% @gallery.images.each do |image| %>
+    <%= image_tag(image, size:"250x200")%>
+    <%= link_to 'Delete', gallery_image_path(@gallery, image),method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end %>
+  <%end %>
+
+
+
+  <div class='field'>
+    <%= form.file_field :images, multiple: true%>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, {:style => "background-color:#ffffff;"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <div class="field">
+    <label>
+      <%= form.check_box :add_to_slide_show, {:type => "checkbox", :class =>"filled-in" } %>
+      <span>Add to Slides</span>
+    </label>
+  </div>
+<% end %>
