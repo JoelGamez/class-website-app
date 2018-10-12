@@ -32,6 +32,8 @@
      margin-right: auto;
      margin-top: auto;
      /* background-color: black; */
+     border: 5px solid white;
+     box-shadow: 4px 2px 4px 0px #666666;
  }
 
  .PostContainer{
@@ -236,6 +238,20 @@ label  {
 .gallery_div {
     margin: 5px;
 }
+
+#resources_container{
+  background-color: #fff !important;
+  border: 0px solid #fffa9b;
+  border-radius: 5px;
+  box-shadow: 4px 2px 4px 0px #666666;
+  padding-left: 10px;
+  text-align: center;
+}
+
+h1, h2, h3, th, .postlink{
+  font-family: 'Pacifico', cursive;
+
+}
 ///////////////////////////////////////Devise
 
 #error_explanation h2 {
@@ -257,3 +273,4 @@ label  {
     margin-bottom: 20px;
     background-color: #f0f0f0;
 }
+////////////////////////////////

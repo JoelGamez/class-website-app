@@ -28,9 +28,17 @@ $(document).ready(function() {
   $('.tap-target').tapTarget();
   $('.dropdown-trigger').dropdown();
   // $('.carousel').carousel();
+  $('#about_carousel').carousel({
+    fullWidth: true,
+    indicators: false,
+    
+
+
+  });
   $('.carousel.carousel-slider').carousel({
    fullWidth: true,
-   indicators: true
+   indicators: true,
+
   });
 
 
@@ -48,5 +56,4 @@ $(document).ready(function() {
       $( "#about_edit" ).show( 2000 );
     });
 
-   
  });
