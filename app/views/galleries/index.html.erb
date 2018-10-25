@@ -4,23 +4,21 @@
 <div class="container">
 <div class="row">
 
-  <%@galleries.each do |gallery| %>
-    <div class="col s4">
-      <div class="carousel-item center gallery_div">
+    <%@galleries.each do |gallery| %>
 
-          <%= image_tag(gallery.images.first, size:"250x200",class: "responsive-img materialboxed postImage gallery_image")%>
-          <%=link_to gallery.title, gallery, class: "postlink gallery_link"%>
+      <%if gallery.images.length > 0%>
+      <div class="col s4">
+        <div class="carousel-item center gallery_div">
+            <%= image_tag(gallery.images.first, size:"250x200",class: "responsive-img materialboxed postImage gallery_image")%>
+            <%=link_to gallery.title, gallery, class: "postlink gallery_link"%>
+        </div>
       </div>
-    </div>
-  <%end%>
+      <%end%>
+   <%end%>
 
-       <!-- Promo Content 1 goes here -->
-     <div class="col s4">
-       <!-- Promo Content 2 goes here -->
-     </div>
-     <div class="col s4">
-       <!-- Promo Content 3 goes here -->
-     </div>
+
+
+
 
  </div>
  </div>

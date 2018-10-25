@@ -1,13 +1,15 @@
 
-<div id="about_carousel" class="carousel carousel-slider">
-  <%Gallery.get_about_gallery.images.each do |image|%>
-    <%= image_tag(image, size:"250x200",class: "carousel-item postImage")%>
+<%if Gallery.get_about_gallery%>
+  <div id="about_carousel" class="carousel carousel-slider">
+    <%Gallery.get_about_gallery.images.each do |image|%>
+      <%= image_tag(image, size:"250x200",class: "carousel-item postImage")%>
 
-  <%end%>
+    <%end%>
 
 
-</div>
-<%=Gallery.get_about_gallery.images.count%>
+  </div>
+  <%=Gallery.get_about_gallery.images.count%>
+<%end%>
 
 
 <div class="container">

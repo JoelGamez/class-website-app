@@ -9,7 +9,8 @@ gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 
 gem 'jquery-rails'
-
+gem 'httparty'
+gem 'nokogiri'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

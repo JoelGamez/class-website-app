@@ -29,5 +29,17 @@
     <%end%>
 
     </div>
+
+    </div>
+
   </div>
+  <hr>
+<div class="container" style="background-color:white,border-radius:5px;">
+
+  <h5>MDCPS Student Resources</h5>
+  <%Admin.scrape.each do |link|%>
+
+  <%=link_to link[:text], link[:url], {:target => '_blank', class: 'postlink'} %> <br>
+
+  <%end%>
 </div>
